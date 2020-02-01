@@ -37,6 +37,7 @@ def deal_card(frame):
     # now return the card's face value
     return next_card
 
+
 def score_hand(hand):
     # Calculate total score of all cards in the list.
     # Only one ace can have the value 11, and this will reduce to 1 if the hand busts.
@@ -47,7 +48,7 @@ def score_hand(hand):
         if card_value == 1 and not ace:
             ace = True
             card_value = 11
-            score += card_value
+        score += card_value
             # if we bust, check if there is an ace and subtract 10
         if score > 21 and ace:
             score -= 10
@@ -56,7 +57,21 @@ def score_hand(hand):
 
 
 def deal_dealer():
-    deal_card(dealer_card_frame)
+    dealer_score = score_hand(dealer_hand)
+    while 0 < dealer_score < 17:
+        dealer_hand.append(deal_card(dealer_card_frame))
+        dealer_score = score_hand(dealer_hand)
+        dealer_score_label.set(dealer_score)
+
+    player_score = score_hand(player_hand)
+    if player_score > 21:
+        result_text.set("Dealer WINS! YOU SUCK!!!")
+    elif dealer_score > 21 or dealer_score < player_score:
+        result_text.set("Player wins! You are so AWESOME")
+    elif dealer_score > player_score:
+        result_text.set("Dealer WINS! YOU SUCK BIG TIME!!!")
+    else:
+        result_text.set("DRAW! DEALER AND PLAYER SUCK!")
 
 
 def deal_player():
@@ -66,7 +81,6 @@ def deal_player():
     player_score_label.set(player_score)
     if player_score > 21:
         result_text.set("Dealer WINS! YOU SUCK!!!")
-
 
     # global player_score
     # global player_ace
@@ -140,6 +154,10 @@ random.shuffle(deck)
 
 dealer_hand = []
 player_hand = []
+
+deal_player()
+dealer_hand.append(deal_card(dealer_card_frame))
+deal_player()
 
 
 mainWindow.mainloop()
