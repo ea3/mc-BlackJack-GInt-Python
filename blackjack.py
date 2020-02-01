@@ -49,7 +49,7 @@ def score_hand(hand):
             ace = True
             card_value = 11
         score += card_value
-            # if we bust, check if there is an ace and subtract 10
+        # if we bust, check if there is an ace and subtract 10
         if score > 21 and ace:
             score -= 10
             ace = False
@@ -82,22 +82,31 @@ def deal_player():
     if player_score > 21:
         result_text.set("Dealer WINS! YOU SUCK!!!")
 
-    # global player_score
-    # global player_ace
-    # card_value = deal_card(player_card_frame)[0]
-    # if card_value == 1 and not player_ace:
-    #     player_ace = True
-    #     card_value = 11
-    # player_score += card_value
-    # # if its a bust, check if there is an ace and subtract
-    # if player_score > 21 and player_ace:
-    #     player_score -= 10
-    #     player_ace = False
-    # player_score_label.set(player_score)
-    # if player_score > 21:
-    #     result_text.set("Dealer wins! You SUCK!")
-    #
-    # print(locals())
+
+def new_game():
+    global dealer_card_frame
+    global player_card_frame
+    global dealer_hand
+    global player_hand
+    # embedded frame to hold card images
+    dealer_card_frame.destroy()
+    dealer_card_frame = tkinter.Frame(card_frame, background='green')
+    dealer_card_frame.grid(row=0, column=1, sticky='ew', rowspan=2)
+    # embedded frame to hold card images
+    player_card_frame.destroy()
+    player_card_frame = tkinter.Frame(card_frame, background="green")
+    player_card_frame.grid(row=2, column=1, sticky="ew", rowspan=2)
+
+    result_text.set("")
+
+    # create list to store dealers and players hand
+    dealer_hand = []
+    player_hand = []
+
+    deal_player()
+    dealer_hand.append(deal_card(dealer_card_frame))
+    dealer_score_label.set(score_hand(dealer_hand))
+    deal_player()
 
 
 mainWindow = tkinter.Tk()
@@ -141,23 +150,28 @@ dealer_button.grid(row=0, column=0)
 player_button = tkinter.Button(button_frame, text="Player", command=deal_player)
 player_button.grid(row=0, column=1)
 
+new_game_button = tkinter.Button(button_frame, text="New Game", command=new_game)
+new_game_button.grid(row=0, column=2)
+
+
 # load cards:
 cards = []
 load_images(cards)
 print(cards)
 
+
 # create a new deck of cards and shuffle
 deck = list(cards)
-random.shuffle(deck)
 
 # create list to store dealers and players hand
 
 dealer_hand = []
 player_hand = []
 
-deal_player()
-dealer_hand.append(deal_card(dealer_card_frame))
-deal_player()
+new_game()
+
+
+random.shuffle(deck)
 
 
 mainWindow.mainloop()
