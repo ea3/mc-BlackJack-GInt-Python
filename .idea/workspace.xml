@@ -37,6 +37,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
   </component>
   <component name="RunManager">
@@ -81,21 +82,21 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="950" height="279" key="GridCell.Tab.0.bottom" timestamp="1580544697954">
+    <state width="627" height="279" key="GridCell.Tab.0.bottom" timestamp="1580546168063">
       <screen x="49" y="23" width="1631" height="1027" />
     </state>
-    <state width="950" height="279" key="GridCell.Tab.0.bottom/49.23.1631.1027@49.23.1631.1027" timestamp="1580544697954" />
-    <state width="950" height="279" key="GridCell.Tab.0.center" timestamp="1580544697953">
+    <state width="627" height="279" key="GridCell.Tab.0.bottom/49.23.1631.1027@49.23.1631.1027" timestamp="1580546168063" />
+    <state width="627" height="279" key="GridCell.Tab.0.center" timestamp="1580546168063">
       <screen x="49" y="23" width="1631" height="1027" />
     </state>
-    <state width="950" height="279" key="GridCell.Tab.0.center/49.23.1631.1027@49.23.1631.1027" timestamp="1580544697953" />
-    <state width="950" height="279" key="GridCell.Tab.0.left" timestamp="1580544697953">
+    <state width="627" height="279" key="GridCell.Tab.0.center/49.23.1631.1027@49.23.1631.1027" timestamp="1580546168063" />
+    <state width="627" height="279" key="GridCell.Tab.0.left" timestamp="1580546168062">
       <screen x="49" y="23" width="1631" height="1027" />
     </state>
-    <state width="950" height="279" key="GridCell.Tab.0.left/49.23.1631.1027@49.23.1631.1027" timestamp="1580544697953" />
-    <state width="950" height="279" key="GridCell.Tab.0.right" timestamp="1580544697953">
+    <state width="627" height="279" key="GridCell.Tab.0.left/49.23.1631.1027@49.23.1631.1027" timestamp="1580546168062" />
+    <state width="627" height="279" key="GridCell.Tab.0.right" timestamp="1580546168063">
       <screen x="49" y="23" width="1631" height="1027" />
     </state>
-    <state width="950" height="279" key="GridCell.Tab.0.right/49.23.1631.1027@49.23.1631.1027" timestamp="1580544697953" />
+    <state width="627" height="279" key="GridCell.Tab.0.right/49.23.1631.1027@49.23.1631.1027" timestamp="1580546168063" />
   </component>
 </project>
